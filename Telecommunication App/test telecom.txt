@@ -1,0 +1,22 @@
+----------------------------Test Telecom------------------------------------------
+
+package miniproject;
+
+public class TestTelecom {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		LandLine myPhone = new LandLine("985632475");
+		myPhone.powerOn();
+		myPhone.callPhone("98359537");
+		myPhone.answer();
+		
+		
+		  MobilePhone myPhone1 = new MobilePhone("12345"); 
+		  myPhone1.powerOn();
+		  myPhone1.callPhone("12345"); myPhone1.answer();
+		 
+	}
+
+}

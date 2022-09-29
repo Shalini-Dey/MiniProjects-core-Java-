@@ -1,0 +1,49 @@
+---------------------LandLine-------------------------------------------------------
+
+package miniproject;
+
+public class LandLine implements telephone{
+
+	private String myNumber;
+	private boolean isRinging;
+	public LandLine(String myNumber) {
+		this.myNumber = myNumber;
+	}
+	@Override
+	public void powerOn() {
+		System.out.println("LandLine is always powered");
+		
+	}
+	@Override
+	public void dial(String phoneNumber) {
+		System.out.println("Phone is Ringing " + phoneNumber + "on LandLine");
+		
+	}
+	@Override
+	public void answer() {
+		if(isRinging) {
+			System.out.println("Answer your LandLine");
+		}else
+		{
+			System.out.println("Phone is not ringing");
+		}
+		
+	}
+	@Override
+	public boolean callPhone(String phoneNumber) {
+		if(phoneNumber == myNumber) {
+			isRinging = true;
+			System.out.println("Phone Ringing");
+		}else
+		{
+			isRinging = false;
+		}
+		return isRinging;
+	}
+	@Override
+	public boolean isRinging() {
+		
+		return isRinging;
+	}
+	
+}

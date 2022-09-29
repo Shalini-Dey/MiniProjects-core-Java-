@@ -1,0 +1,55 @@
+------------------------MOBILE  PHONE-----------------------------------------
+
+package miniproject;
+
+public class MobilePhone implements telephone{
+	private String myNumber;
+	private boolean isRinging;
+	private boolean isPowerOn;
+	
+	public MobilePhone(String myNumber) {
+		this.myNumber = myNumber;
+	}
+	
+	@Override
+	public void powerOn() {
+		isPowerOn = true;
+		System.out.println("Mobile Phone is powered On");
+		
+	}
+	@Override
+	public void dial(String phoneNumber) {
+		System.out.println("Mobile is Ringing " + phoneNumber + "on Mobile");
+		
+	}
+	@Override
+	public void answer() {
+		if(isRinging && isPowerOn) {
+			System.out.println("Answer your Mobile");
+			isRinging = false;
+		}else
+		{
+			
+		}
+		
+	}
+	@Override
+	public boolean callPhone(String phoneNumber) {
+		if(phoneNumber == myNumber && isPowerOn) {
+			isRinging = true;
+			System.out.println("Phone Ringing");
+		}else
+		{
+			System.out.println("Either Wrong number entered or phone is off");
+			isRinging = false;
+		}
+		return isRinging;
+	}
+	@Override
+	public boolean isRinging() {
+		
+		return isRinging;
+	}
+	
+
+}
